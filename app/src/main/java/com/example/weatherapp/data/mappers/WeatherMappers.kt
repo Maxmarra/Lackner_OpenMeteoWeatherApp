@@ -1,5 +1,7 @@
 package com.example.weatherapp.data.mappers
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import com.example.weatherapp.data.remote.WeatherDataDto
 import com.example.weatherapp.data.remote.WeatherDto
 import com.example.weatherapp.domain.weather.WeatherData
@@ -20,6 +22,7 @@ fun WeatherDataDto.toWeatherDataMap(): Map<Int, List<WeatherData>> {
         val windSpeed = windSpeeds[index]
         val pressure = pressures[index]
         val humidity = humidities[index]
+
         IndexedWeatherData(
             index = index,
             data = WeatherData(
